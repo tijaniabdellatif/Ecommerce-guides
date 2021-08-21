@@ -10,21 +10,41 @@ import { Home,
     SingleProduct,
     Error
  } from './pages'
+import SingleProductPage from './pages/SingleProductPage';
 
 
 function App(){
 
-    return(
+    return (
         <Router>
-             <Navbar />
-             <Sidebar />
+          <Navbar />
+          <Sidebar />
+          <Switch>
+            
+            <Route exact path='/'>
+                     <Home />
+            </Route>
+            <Route exact path='/products'>
+                     <Product />
+            </Route>
+            <Route exact path='/about'>
+                     <About />
+            </Route>
+            <Route exact path='/cart'>
+                     <Cart />
+            </Route>
+            <Route exact path='/product/:id' children={<SingleProduct />} />
+              
+            <Route exact path='/checkout'>
+                     <Checkout />
+            </Route>
 
-             <Switch>
-
-             </Switch>
-
+            <Route path="*">
+             <Error />
+            </Route>
+          </Switch>
         </Router>
-    );
+      );
 }
 
 export default App;

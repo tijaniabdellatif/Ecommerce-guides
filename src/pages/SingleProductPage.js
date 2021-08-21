@@ -2,7 +2,8 @@ import React from 'react';
 
 const SingleProductPage = () => {
 
-    return(<h1>About Page</h1>);
+   
+    return(<h1>test</h1>);
 
 }
 
