@@ -5,6 +5,8 @@ import {Link } from 'react-router-dom';
 import {links} from '../utils/constants';
 import  logo from '../assets/logo-fi.png'
 
+import MenuButtons from './MenuButtons';
+
 
 const Nav = () => {
 
@@ -13,16 +15,31 @@ const Nav = () => {
             <div className="nav-center">
                 <div className="nav-header">
 
-                   <img src='' />
+                 <Link to='/'>
+                 <img src={logo}  alt="logo"/>
+                 </Link>
+                 
 
                    <button type='button' className="nav-toggle">
                        <FaBars />
                    </button>
 
                   <ul className="nav-links">
-                      <li></li>
+                      {
+                         links.map((link) => {
+                            const {id,text,url} = link
+                            return(
+                                <li key={id}>
+                                    <Link to={url}>
+                                        {text}
+                                    </Link>
+                                </li>
+                            );
+                         }) 
+                      }
                   </ul>
                 </div>
+                <MenuButtons />
             </div>
         </NavContainer>
     );
