@@ -3,4 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(<App />,document.getElementById('root'));
+import {ProductsProvider} from './context/product_context';
+
+ReactDOM.render(
+
+<ProductsProvider>
+<App />
+</ProductsProvider>
+,
+document.getElementById('root'));
