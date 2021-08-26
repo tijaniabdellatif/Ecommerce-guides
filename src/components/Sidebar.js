@@ -5,8 +5,11 @@ import {FaTimes} from 'react-icons/fa'
 import { links } from '../utils/constants'
 import {MenuButtons} from "./MenuButtons"
 import { Link } from 'react-router-dom'
+import {useProductsContext} from '../context/product_context';
  
 const Sidebar = () => {
+
+  const {isSideBarOpen,closeSidebar} = useProductsContext(); 
 
     return(<SidebarContainer>
      <aside className="sidebar sidebar-show">
