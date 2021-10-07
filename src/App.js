@@ -10,7 +10,7 @@ import { Home,
     SingleProduct,
     Error
  } from './pages'
-import SingleProductPage from './pages/SingleProductPage';
+
 
 
 function App(){

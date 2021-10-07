@@ -1,8 +1,15 @@
 import React from 'react';
 
+import {Hero,FeaturedProducts} from '../components';
+
 const HomePage = () => {
 
-    return(<h1>Home Page</h1>);
+    return(
+        <main>
+            <Hero />
+            <FeaturedProducts />
+        </main>
+    );
 
 }
 

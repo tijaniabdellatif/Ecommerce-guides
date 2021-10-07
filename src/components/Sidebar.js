@@ -3,21 +3,21 @@ import styled from 'styled-components'
 import logo from '../assets/logo-fi.png'
 import {FaTimes} from 'react-icons/fa'
 import { links } from '../utils/constants'
-import {MenuButtons} from "./MenuButtons"
 import { Link } from 'react-router-dom'
 import {useProductsContext} from '../context/product_context';
+import MenuButtons from './MenuButtons';
  
 const Sidebar = () => {
 
   const {isSideBarOpen,closeSidebar} = useProductsContext(); 
 
     return(<SidebarContainer>
-     <aside className="sidebar sidebar-show">
+     <aside className={`${isSideBarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
 
        <div className="sidebar-header">
               
               <img src={logo} className='logo' alt='logo' />
-              <button className="close-btn" type="button">
+              <button className="close-btn" type="button" onClick={closeSidebar}>
                 <FaTimes />
               </button>
        </div>
@@ -29,7 +29,7 @@ const Sidebar = () => {
             const {id,url,text} = link
             return(
               <li key={id}>
-                <Link to={url}>
+                <Link to={url} onClick={closeSidebar}>
                   {text}
                 </Link>
               </li>
@@ -38,12 +38,14 @@ const Sidebar = () => {
            })
          }
          <li>
-           <Link to="/checkout">
+           <Link to="/checkout" onClick={closeSidebar}>
              Checkout
            </Link>
          </li>
        </ul>
+
        <MenuButtons />
+    
      </aside>
     </SidebarContainer>);
 }

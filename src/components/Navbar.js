@@ -6,9 +6,12 @@ import {links} from '../utils/constants';
 import  logo from '../assets/logo-fi.png'
 
 import MenuButtons from './MenuButtons';
+import {useProductsContext} from '../context/product_context';
 
 
 const Nav = () => {
+
+  const {openSidebar} = useProductsContext();
 
     return(
         <NavContainer>
@@ -20,7 +23,7 @@ const Nav = () => {
                  </Link>
                  
 
-                   <button type='button' className="nav-toggle">
+                   <button type='button' className="nav-toggle" onClick={openSidebar}>
                        <FaBars />
                    </button>
 

@@ -7,8 +7,11 @@ import {ProductsProvider} from './context/product_context';
 
 ReactDOM.render(
 
+
 <ProductsProvider>
+
 <App />
+
 </ProductsProvider>
 ,
 document.getElementById('root'));
